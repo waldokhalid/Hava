@@ -1,0 +1,56 @@
+{
+  "cod": "200",
+  "message": 0,
+  "cnt": 40,
+  "list": [
+    {
+    "dt": 1663880400,
+    "main": {
+      "temp": 295.86,
+      "feels_like": 296.33,
+      "temp_min": 295.86,
+      "temp_max": 295.86,
+      "pressure": 1013,
+      "sea_level": 1013,
+      "grnd_level": 950,
+      "humidity": 82,
+      "temp_kf": 0
+    },
+    "weather": [
+      {
+      "id": 803,
+      "main": "Clouds",
+      "description": "broken clouds",
+      "icon": "04n"
+      }
+    ],
+    "clouds": {
+      "all": 71
+    },
+    "wind": {
+      "speed": 0.77,
+      "deg": 153,
+      "gust": 0.82
+    },
+    "visibility": 10000,
+    "pop": 0.04,
+    "sys": {
+      "pod": "n"
+    },
+    "dt_txt": "2022-09-22 21:00:00"
+    }
+  ],
+  "city": {
+    "id": 2351027,
+    "name": "Akko",
+    "coord": {
+      "lat": 10.34,
+      "lon": 10.99
+    },
+    "country": "NG",
+    "population": 6129,
+    "timezone": 3600,
+    "sunrise": 1663391140,
+    "sunset": 1663434946
+  }
+}
