@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                                         Text(
                                           state.timeZone,
                                           style: GoogleFonts.lexendTera(
-                                            fontSize: 24,
+                                            fontSize: 22,
                                             color: Colors.black,
                                           ),
                                         ),
@@ -145,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                                   Text(
                                     weekDays[state.dayOneDate - 1],
                                     style: GoogleFonts.lexendPeta(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -169,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                                   Text(
                                     weekDays[state.dayTwoDate - 1],
                                     style: GoogleFonts.lexendPeta(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -193,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                                   Text(
                                     weekDays[state.dayThreeDate - 1],
                                     style: GoogleFonts.lexendPeta(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -217,7 +217,7 @@ class _HomePageState extends State<HomePage> {
                                   Text(
                                     weekDays[state.dayFourDate - 1],
                                     style: GoogleFonts.lexendPeta(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -241,7 +241,7 @@ class _HomePageState extends State<HomePage> {
                                   Text(
                                     weekDays[state.dayFiveDate - 1],
                                     style: GoogleFonts.lexendPeta(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -261,93 +261,78 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                         ),
-                        // Center(
-                        //   child: Padding(
-                        //     padding: const EdgeInsets.all(15.0),
-                        //     child: Container(
-                        //       height: MediaQuery.of(context).size.height / 3.5,
-                        //       width: MediaQuery.of(context).size.width / 1.1,
-                        //       decoration: const BoxDecoration(
-                        //           // color: Colors.white.withOpacity(0.5),
-                        //           ),
-                        //       child: Row(
-                        //         mainAxisAlignment:
-                        //             MainAxisAlignment.spaceEvenly,
-                        //         children: [
-                        //           Column(
-                        //             mainAxisAlignment:
-                        //                 MainAxisAlignment.spaceEvenly,
-                        //             children: [
-                        //               const Icon(
-                        //                 WeatherIcons.thermometer,
-                        //                 color: Colors.redAccent,
-                        //                 size: 45,
-                        //               ),
-                        //               Text(
-                        //                 "state.highTemp.toString()" + "℃",
-                        //                 style: GoogleFonts.lexendPeta(
-                        //                   fontSize: 14,
-                        //                   color: Colors.white,
-                        //                 ),
-                        //               ),
-                        //             ],
-                        //           ),
-                        //           Column(
-                        //             mainAxisAlignment:
-                        //                 MainAxisAlignment.spaceEvenly,
-                        //             children: [
-                        //               const Icon(
-                        //                 WeatherIcons.snowflake_cold,
-                        //                 color: Colors.purple,
-                        //                 size: 45,
-                        //               ),
-                        //               Text(
-                        //                 "state.feelTemp.toString()" + "℃",
-                        //                 style: GoogleFonts.lexendPeta(
-                        //                   fontSize: 14,
-                        //                   color: Colors.white,
-                        //                 ),
-                        //               ),
-                        //             ],
-                        //           ),
-                        //           Column(
-                        //             mainAxisAlignment:
-                        //                 MainAxisAlignment.spaceEvenly,
-                        //             children: [
-                        //               const Icon(
-                        //                 WeatherIcons.thermometer,
-                        //                 color: Colors.greenAccent,
-                        //                 size: 45,
-                        //               ),
-                        //               Text(
-                        //                 "state.lowTemp.toString()" + "℃",
-                        //                 style: GoogleFonts.lexendPeta(
-                        //                   fontSize: 14,
-                        //                   color: Colors.white,
-                        //                 ),
-                        //               ),
-                        //             ],
-                        //           ),
-
-                        //           // Padding(
-                        //           //   padding: const EdgeInsets.all(25.0),
-                        //           //   child: Row(
-                        //           //     mainAxisAlignment:
-                        //           //         MainAxisAlignment.spaceEvenly,
-                        //           //     children: [
-                        //           //       Text(state.highTemp.toString()),
-                        //           //       Text(state.lowTemp.toString()),
-                        //           //     ],
-                        //           //   ),
-                        //           // ),
-                        //           // Row(
-                        //           //   children: [],
-                        //           // ),
-                        //         ],
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                        Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Container(
+                              height: MediaQuery.of(context).size.height / 3.5,
+                              width: MediaQuery.of(context).size.width / 1.1,
+                              decoration: const BoxDecoration(
+                                  // color: Colors.white.withOpacity(0.5),
+                                  ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      const Icon(
+                                        WeatherIcons.thermometer,
+                                        color: Colors.redAccent,
+                                        size: 35,
+                                      ),
+                                      Text(
+                                        state.highTemp.toString(),
+                                        style: GoogleFonts.lexendPeta(
+                                          fontSize: 14,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      const Icon(
+                                        WeatherIcons.thermometer,
+                                        color: Colors.green,
+                                        size: 35,
+                                      ),
+                                      Text(
+                                        state.lowTemp.toString(),
+                                        style: GoogleFonts.lexendPeta(
+                                          fontSize: 14,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      const Icon(
+                                        WeatherIcons.humidity,
+                                        color: Colors.cyanAccent,
+                                        size: 35,
+                                      ),
+                                      Text(
+                                        state.humidity.toString(),
+                                        style: GoogleFonts.lexendPeta(
+                                          fontSize: 14,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   );
@@ -362,5 +347,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-mixin $ {}

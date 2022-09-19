@@ -9,39 +9,20 @@ class HomeLoadingState extends HomeState {
   List<Object> get props => [];
 }
 
-// class HomeLoadedState extends HomeState {
-//   final String timeZone;
-//   final dynamic temp;
-
-//   HomeLoadedStatethis{
-//     this.timeZone;
-//     this.temp;
-//   }
-
-//   @override
-//   // TODO: implement props
-//   List<Object?> get props => [];
-// }
-
 class HomeLoadedState extends HomeState {
   final dynamic timeZone;
   final dynamic temp;
-
   final dynamic feelsLike;
   final dynamic icon;
 
   final dynamic dayOneTemp;
   final dynamic dayOneIcon;
-
   final dynamic dayTwoTemp;
   final dynamic dayTwoIcon;
-
   final dynamic dayThreeTemp;
   final dynamic dayThreeIcon;
-
   final dynamic dayFourTemp;
   final dynamic dayFourIcon;
-
   final dynamic dayFiveTemp;
   final dynamic dayFiveIcon;
 
@@ -50,6 +31,10 @@ class HomeLoadedState extends HomeState {
   final dynamic dayThreeDate;
   final dynamic dayFourDate;
   final dynamic dayFiveDate;
+
+  final dynamic highTemp;
+  final dynamic lowTemp;
+  final dynamic humidity;
 
   const HomeLoadedState(
     this.timeZone,
@@ -71,6 +56,9 @@ class HomeLoadedState extends HomeState {
     this.dayThreeDate,
     this.dayFourDate,
     this.dayFiveDate,
+    this.highTemp,
+    this.lowTemp,
+    this.humidity,
   );
 
   @override
@@ -78,5 +66,20 @@ class HomeLoadedState extends HomeState {
         timeZone,
         temp,
         icon,
+        dayOneTemp,
+        dayOneIcon,
+        dayTwoTemp,
+        dayTwoIcon,
+        dayThreeTemp,
+        dayThreeIcon,
+        dayFourTemp,
+        dayFourIcon,
+        dayFiveTemp,
+        dayFiveIcon,
+        dayOneDate,
+        dayTwoDate,
+        dayThreeDate,
+        dayFourDate,
+        dayFiveDate
       ];
 }
