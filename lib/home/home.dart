@@ -23,18 +23,6 @@ class _HomePageState extends State<HomePage> {
       )..add(LoadApiEvent()),
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent.withOpacity(0.0),
-          centerTitle: true,
-          elevation: 0,
-          title: Text(
-            "Hava",
-            style: GoogleFonts.lexendTera(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
-          ),
-        ),
         body: Stack(
           children: [
             Container(
@@ -60,14 +48,13 @@ class _HomePageState extends State<HomePage> {
                           height: (MediaQuery.of(context).size.height) / 2.28,
                           child: Center(
                             child: Container(
-                              height: (MediaQuery.of(context).size.height) / 4,
+                              height: (MediaQuery.of(context).size.height) / 3,
                               width: (MediaQuery.of(context).size.width) / 1.1,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 color: Colors.white.withOpacity(0.7),
                               ),
-                              // height: (MediaQuery.of(context).size.height) / 2,
-                              // width: (MediaQuery.of(context).size.width),
+                              // height: (MediaQuery.of(context).size.he
                               child: Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
@@ -79,9 +66,9 @@ class _HomePageState extends State<HomePage> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          state.timeZone,
+                                          userLoc,
                                           style: GoogleFonts.lexendTera(
-                                            fontSize: 22,
+                                            fontSize: 12,
                                             color: Colors.black,
                                           ),
                                         ),
@@ -95,13 +82,28 @@ class _HomePageState extends State<HomePage> {
                                       Text(
                                         state.temp.toString() + "℃",
                                         style: GoogleFonts.lexendTera(
-                                          fontSize: 20,
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold,
                                           color: Colors.black,
                                         ),
                                       ),
-                                      Image(
-                                        image: NetworkImage(
-                                            "http://openweathermap.org/img/w/${state.icon}.png"),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Image(
+                                            image: NetworkImage(
+                                              "http://openweathermap.org/img/w/${state.icon}.png",
+                                            ),
+                                          ),
+                                          Text(
+                                            state.weatherDesc.toString(),
+                                            style: GoogleFonts.lexendTera(
+                                              fontSize: 10,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
@@ -120,211 +122,208 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ],
                                   ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          const Padding(
+                                            padding: EdgeInsets.all(8.0),
+                                            child: Icon(
+                                              WeatherIcons.thermometer,
+                                              color: Colors.red,
+                                            ),
+                                          ),
+                                          Text(
+                                            state.highTemp.toString() + "℃",
+                                            style: GoogleFonts.lexendTera(
+                                              fontSize: 12,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          const Padding(
+                                            padding: EdgeInsets.all(8.0),
+                                            child: Icon(
+                                              WeatherIcons.thermometer,
+                                              color: Colors.blueAccent,
+                                            ),
+                                          ),
+                                          Text(
+                                            state.lowTemp.toString() + "℃",
+                                            style: GoogleFonts.lexendTera(
+                                              fontSize: 12,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          const Padding(
+                                            padding: EdgeInsets.all(8.0),
+                                            child: Icon(
+                                              WeatherIcons.humidity,
+                                              color: Colors.greenAccent,
+                                            ),
+                                          ),
+                                          Text(
+                                            state.humidity.toString(),
+                                            style: GoogleFonts.lexendTera(
+                                              fontSize: 12,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ],
                               ),
                             ),
                           ),
                         ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 10,
-                          ),
-                          height: (MediaQuery.of(context).size.height) / 5,
-                          width: (MediaQuery.of(context).size.width) / 1.1,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.black.withOpacity(0.7),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Text(
-                                    weekDays[state.dayOneDate - 1],
-                                    style: GoogleFonts.lexendPeta(
-                                      fontSize: 14,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  Text(
-                                    state.dayOneTemp.toString() + "℃",
-                                    style: GoogleFonts.lexendPeta(
-                                      fontSize: 12,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  Image(
-                                    image: NetworkImage(
-                                        "http://openweathermap.org/img/w/${state.dayOneIcon}.png"),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Text(
-                                    weekDays[state.dayTwoDate - 1],
-                                    style: GoogleFonts.lexendPeta(
-                                      fontSize: 14,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  Text(
-                                    state.dayTwoTemp.toString() + "℃",
-                                    style: GoogleFonts.lexendPeta(
-                                      fontSize: 12,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  Image(
-                                    image: NetworkImage(
-                                        "http://openweathermap.org/img/w/${state.dayTwoIcon}.png"),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Text(
-                                    weekDays[state.dayThreeDate - 1],
-                                    style: GoogleFonts.lexendPeta(
-                                      fontSize: 14,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  Text(
-                                    state.dayThreeTemp.toString() + "℃",
-                                    style: GoogleFonts.lexendPeta(
-                                      fontSize: 12,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  Image(
-                                    image: NetworkImage(
-                                        "http://openweathermap.org/img/w/${state.dayThreeIcon}.png"),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Text(
-                                    weekDays[state.dayFourDate - 1],
-                                    style: GoogleFonts.lexendPeta(
-                                      fontSize: 14,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  Text(
-                                    state.dayFourTemp.toString() + "℃",
-                                    style: GoogleFonts.lexendPeta(
-                                      fontSize: 12,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  Image(
-                                    image: NetworkImage(
-                                        "http://openweathermap.org/img/w/${state.dayFourIcon}.png"),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Text(
-                                    weekDays[state.dayFiveDate - 1],
-                                    style: GoogleFonts.lexendPeta(
-                                      fontSize: 14,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  Text(
-                                    state.dayFiveTemp.toString() + "℃",
-                                    style: GoogleFonts.lexendPeta(
-                                      fontSize: 12,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  Image(
-                                    image: NetworkImage(
-                                        "http://openweathermap.org/img/w/${state.dayFiveIcon}.png"),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        Center(
-                          child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 1.8,
+                          child: Center(
                             child: Container(
-                              height: MediaQuery.of(context).size.height / 3.5,
-                              width: MediaQuery.of(context).size.width / 1.1,
-                              decoration: const BoxDecoration(
-                                  // color: Colors.white.withOpacity(0.5),
-                                  ),
-                              child: Row(
+                              height: (MediaQuery.of(context).size.height) / 2,
+                              width: (MediaQuery.of(context).size.width) / 1.1,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.black.withOpacity(0.7),
+                              ),
+                              child: Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  Column(
+                                  Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      const Icon(
-                                        WeatherIcons.thermometer,
-                                        color: Colors.redAccent,
-                                        size: 35,
-                                      ),
                                       Text(
-                                        state.highTemp.toString(),
-                                        style: GoogleFonts.lexendPeta(
-                                          fontSize: 14,
+                                        weekDays[state.dayOneDate - 1],
+                                        style: GoogleFonts.lexendTera(
+                                          fontSize: 12,
                                           color: Colors.white,
                                         ),
+                                      ),
+                                      Text(
+                                        state.dayOneTemp.toString() + "℃",
+                                        style: GoogleFonts.lexendTera(
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Image(
+                                        image: NetworkImage(
+                                            "http://openweathermap.org/img/w/${state.dayOneIcon}.png"),
                                       ),
                                     ],
                                   ),
-                                  Column(
+                                  Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      const Icon(
-                                        WeatherIcons.thermometer,
-                                        color: Colors.green,
-                                        size: 35,
-                                      ),
                                       Text(
-                                        state.lowTemp.toString(),
-                                        style: GoogleFonts.lexendPeta(
-                                          fontSize: 14,
+                                        weekDays[state.dayTwoDate - 1],
+                                        style: GoogleFonts.lexendTera(
+                                          fontSize: 12,
                                           color: Colors.white,
                                         ),
+                                      ),
+                                      Text(
+                                        state.dayTwoTemp.toString() + "℃",
+                                        style: GoogleFonts.lexendTera(
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Image(
+                                        image: NetworkImage(
+                                            "http://openweathermap.org/img/w/${state.dayTwoIcon}.png"),
                                       ),
                                     ],
                                   ),
-                                  Column(
+                                  Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      const Icon(
-                                        WeatherIcons.humidity,
-                                        color: Colors.cyanAccent,
-                                        size: 35,
-                                      ),
                                       Text(
-                                        state.humidity.toString(),
-                                        style: GoogleFonts.lexendPeta(
-                                          fontSize: 14,
+                                        weekDays[state.dayThreeDate - 1],
+                                        style: GoogleFonts.lexendTera(
+                                          fontSize: 12,
                                           color: Colors.white,
                                         ),
+                                      ),
+                                      Text(
+                                        state.dayThreeTemp.toString() + "℃",
+                                        style: GoogleFonts.lexendTera(
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Image(
+                                        image: NetworkImage(
+                                            "http://openweathermap.org/img/w/${state.dayThreeIcon}.png"),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Text(
+                                        weekDays[state.dayFourDate - 1],
+                                        style: GoogleFonts.lexendTera(
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Text(
+                                        state.dayFourTemp.toString() + "℃",
+                                        style: GoogleFonts.lexendTera(
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Image(
+                                        image: NetworkImage(
+                                            "http://openweathermap.org/img/w/${state.dayFourIcon}.png"),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Text(
+                                        weekDays[state.dayFiveDate - 1],
+                                        style: GoogleFonts.lexendTera(
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Text(
+                                        state.dayFiveTemp.toString() + "℃",
+                                        style: GoogleFonts.lexendTera(
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Image(
+                                        image: NetworkImage(
+                                            "http://openweathermap.org/img/w/${state.dayFiveIcon}.png"),
                                       ),
                                     ],
                                   ),

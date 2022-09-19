@@ -3,6 +3,9 @@ import 'package:hava/services/openWeatherMapApi.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:flutter_geocoder/geocoder.dart';
+
+late String userLoc;
 
 GetWeatherDetails getWeatherDetailsFromJson(String str) =>
     GetWeatherDetails.fromJson(json.decode(str));
@@ -276,8 +279,8 @@ class GetWeatherService {
     // request location permission
     // check location permission
     bool servicestatus = await Geolocator.isLocationServiceEnabled();
-    await Geolocator.requestPermission();
     await Geolocator.checkPermission();
+    await Geolocator.requestPermission();
 
     if (servicestatus) {
       // if permission is granted get user coordinates and return
@@ -301,16 +304,25 @@ class GetWeatherService {
     }
   }
 
+  Future<String> _getAddress(lat, long) async {
+    final userAddress = await Geocoder.local.findAddressesFromCoordinates(
+      Coordinates(lat, long),
+    );
+    userLoc = userAddress.first.subLocality.toString();
+    print(userLoc);
+
+    return "";
+  }
+
   Future<GetWeatherDetails> getWeather() async {
     dynamic latLong = await checkAndGetLocationPermissions() as List;
-
-    // print(latLong.runtimeType);
 
     double latitude = latLong[0];
     double longitude = latLong[1];
 
-    // call the api for weather details and return
+    _getAddress(latitude, longitude);
 
+    // call the api for weather details and return
     final response = await http.get(Uri.parse(
         "http://api.openweathermap.org/data/2.5/onecall?lat=$latitude&lon=$longitude&units=metric&appid=$openWeatherMapApiKey"));
     final weatherDetails = getWeatherDetailsFromJson(response.body.toString());

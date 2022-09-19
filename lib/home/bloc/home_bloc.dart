@@ -36,6 +36,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         activity.current.temp.toInt(),
         activity.current.feelsLike.toInt(),
         activity.current.weather[0].icon,
+        activity.current.weather[0].description,
         activity.daily[1].temp.day.toInt(),
         activity.daily[1].weather[0].icon,
         activity.daily[2].temp.day.toInt(),

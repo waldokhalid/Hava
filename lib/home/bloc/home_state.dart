@@ -14,6 +14,7 @@ class HomeLoadedState extends HomeState {
   final dynamic temp;
   final dynamic feelsLike;
   final dynamic icon;
+  final dynamic weatherDesc;
 
   final dynamic dayOneTemp;
   final dynamic dayOneIcon;
@@ -41,6 +42,7 @@ class HomeLoadedState extends HomeState {
     this.temp,
     this.feelsLike,
     this.icon,
+    this.weatherDesc,
     this.dayOneTemp,
     this.dayOneIcon,
     this.dayTwoTemp,
