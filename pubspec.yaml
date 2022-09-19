@@ -28,10 +28,14 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
 
+  weather_icons: 
+  google_fonts:
   flutter_bloc: 
   geolocator: 
   equatable:
+  duration: 
   http: 
+  intl: 
   
   flutter:
     sdk: flutter
@@ -64,8 +68,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/Sea-sunny.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

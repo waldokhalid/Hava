@@ -1,56 +1,96 @@
 {
-  "cod": "200",
-  "message": 0,
-  "cnt": 40,
-  "list": [
-    {
-    "dt": 1663880400,
-    "main": {
-      "temp": 295.86,
-      "feels_like": 296.33,
-      "temp_min": 295.86,
-      "temp_max": 295.86,
-      "pressure": 1013,
-      "sea_level": 1013,
-      "grnd_level": 950,
-      "humidity": 82,
-      "temp_kf": 0
-    },
+  "lat": -1.316,
+  "lon": 36.8433,
+  "timezone": "Africa/Nairobi",
+  "timezone_offset": 10800,
+  "current": {
+    "dt": 1663574377,
+    "sunrise": 1663557805,
+    "sunset": 1663601386,
+    "temp": 20.4,
+    "feels_like": 19.91,
+    "pressure": 1025,
+    "humidity": 54,
+    "dew_point": 10.79,
+    "uvi": 11.64,
+    "clouds": 75,
+    "visibility": 10000,
+    "wind_speed": 5.14,
+    "wind_deg": 90,
     "weather": [
       {
-      "id": 803,
-      "main": "Clouds",
-      "description": "broken clouds",
-      "icon": "04n"
+        "id": 803,
+        "main": "Clouds",
+        "description": "broken clouds",
+        "icon": "04d"
       }
-    ],
-    "clouds": {
-      "all": 71
-    },
-    "wind": {
-      "speed": 0.77,
-      "deg": 153,
-      "gust": 0.82
-    },
-    "visibility": 10000,
-    "pop": 0.04,
-    "sys": {
-      "pod": "n"
-    },
-    "dt_txt": "2022-09-22 21:00:00"
+    ]
+  },
+  "hourly": [
+    {
+      "dt": 1663570800,
+      "temp": 20.41,
+      "feels_like": 19.92,
+      "pressure": 1024,
+      "humidity": 54,
+      "dew_point": 10.8,
+      "uvi": 7.78,
+      "clouds": 63,
+      "visibility": 10000,
+      "wind_speed": 3.29,
+      "wind_deg": 60,
+      "wind_gust": 3.47,
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "broken clouds",
+          "icon": "04d"
+        }
+      ],
+      "pop": 0
     }
   ],
-  "city": {
-    "id": 2351027,
-    "name": "Akko",
-    "coord": {
-      "lat": 10.34,
-      "lon": 10.99
-    },
-    "country": "NG",
-    "population": 6129,
-    "timezone": 3600,
-    "sunrise": 1663391140,
-    "sunset": 1663434946
-  }
+  "daily": [
+    {
+      "dt": 1663578000,
+      "sunrise": 1663557805,
+      "sunset": 1663601386,
+      "moonrise": 1663539360,
+      "moonset": 1663583700,
+      "moon_phase": 0.79,
+      "temp": {
+        "day": 21.14,
+        "min": 15.57,
+        "max": 26.07,
+        "night": 16.85,
+        "eve": 24.24,
+        "morn": 15.68
+      },
+      "feels_like": {
+        "day": 20.64,
+        "night": 16.73,
+        "eve": 23.66,
+        "morn": 15.37
+      },
+      "pressure": 1023,
+      "humidity": 51,
+      "dew_point": 10.62,
+      "wind_speed": 7.07,
+      "wind_deg": 121,
+      "wind_gust": 9.04,
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "broken clouds",
+          "icon": "04d"
+        }
+      ],
+      "clouds": 62,
+      "pop": 0.06,
+      "uvi": 14.11
+    }
+    
+  ]
 }
